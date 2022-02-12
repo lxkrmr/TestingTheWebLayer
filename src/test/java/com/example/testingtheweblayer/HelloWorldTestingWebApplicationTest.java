@@ -15,14 +15,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class TestingWebApplicationTest {
+public class HelloWorldTestingWebApplicationTest {
 
     @Autowired
     private MockMvc mockMvc;
 
     @Test
-    void greetings_returnsDefaultMessage() throws Exception {
-        mockMvc.perform(get("/"))
+    void hello_returnsDefaultMessage() throws Exception {
+        mockMvc.perform(get("/hello"))
                .andDo(print())
                .andExpect(status().isOk())
                .andExpect(content().string(containsString("Hello, World")));

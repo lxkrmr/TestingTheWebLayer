@@ -9,7 +9,7 @@ import org.springframework.boot.web.server.LocalServerPort;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class HttpRequestTest {
+public class HelloWorldHttpRequestTest {
 
     @LocalServerPort
     private int port;
@@ -18,9 +18,9 @@ public class HttpRequestTest {
     private TestRestTemplate restTemplate;
 
     @Test
-    void greeting_returnsDefaultMessage() {
+    void hello_returnsDefaultMessage() {
         // when
-        var result = restTemplate.getForObject("http://localhost:" + port + "/", String.class);
+        var result = restTemplate.getForObject("http://localhost:" + port + "/hello", String.class);
 
         // then
         assertThat(result).isEqualTo("Hello, World");

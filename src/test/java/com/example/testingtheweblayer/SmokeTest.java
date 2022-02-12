@@ -10,10 +10,18 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 public class SmokeTest {
 
     @Autowired
-    private HomeController controller;
+    private HelloWorldController helloWorldController;
+
+    @Autowired
+    private GreetingController greetingController;
+
+    @Autowired
+    private GreetingsService greetingsService;
 
     @Test
     void contextLoads() {
-        assertThat(controller).isNotNull();
+        assertThat(helloWorldController).isNotNull();
+        assertThat(greetingController).isNotNull();
+        assertThat(greetingsService).isNotNull();
     }
 }
