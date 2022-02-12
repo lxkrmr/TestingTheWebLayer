@@ -20,7 +20,7 @@ public class HttpRequestTest {
     @Test
     void greeting_returnsDefaultMessage() {
         // when
-        String result = this.restTemplate.getForObject("http://localhost:" + port + "/", String.class);
+        var result = restTemplate.getForObject("http://localhost:" + port + "/", String.class);
 
         // then
         assertThat(result).isEqualTo("Hello, World");
